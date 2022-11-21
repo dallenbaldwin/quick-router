@@ -1,5 +1,5 @@
 {
-  "name": "@dallen.baldwin/quick-router",
+  "name": "@dallenbaldwin/quick-router",
   "version": "0.0.1",
   "description": "BSL-1.0 - A simple utility which wraps as much REST router code as possible",
   "main": "dist/index.js",
