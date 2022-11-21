@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "description": "BSL-1.0 - A simple utility which wraps as much REST router code as possible",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "concurrently -k \"npm run watch\" \"npm run repl\"",
     "repl": "nodemon",
     "watch": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run test",
+    "build": "tsc && npm publish --access public"
   },
   "keywords": [
     "express",
