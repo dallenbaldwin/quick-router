@@ -25,5 +25,5 @@ want more? open an issue or submit a pull request
 ## Installation
 
 ``` bash
-npm install express quick-router
+npm install express @dallen.baldwin/quick-router
 ```
