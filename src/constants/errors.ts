@@ -1,7 +1,16 @@
+/**
+ * Copyright Dallen Baldwin 2022 - now
+ * Distributed under the Boost Software License, Version 1.0.
+ * (See accompanying file ./LICENSE or copy at https://www.boost.org/LICENSE_1_0.txt)
+ */
+
+/**
+ * A union type that encompasses all error codes
+ */
 export type ErrorCode = ClientError | ServerError;
 
 /**
- * names, codes, and descriptions take from [mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
+ * Names, codes, and descriptions take from [mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
  */
 export enum ClientError {
   /**

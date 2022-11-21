@@ -24,4 +24,6 @@ want more? open an issue or submit a pull request
 
 ## Installation
 
-<!-- TODO installation steps -->
+``` bash
+npm install express quick-router
+```
