@@ -2,8 +2,11 @@
   "name": "quick-router",
   "version": "0.0.1",
   "description": "a simple utility which wraps as much REST router code as possible",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "dev": "concurrently -k \"npm run watch\" \"npm run repl\"",
+    "repl": "nodemon",
+    "watch": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,5 +15,12 @@
     "router"
   ],
   "author": "dallen baldwin",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "concurrently": "^7.6.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.3"
+  }
 }
