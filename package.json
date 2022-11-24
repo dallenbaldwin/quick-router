@@ -5,12 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "concurrently -k \"npm run watch\" \"npm run repl\"",
+    "dev": "concurrently -k -n \"watch,repl\" -c \"green,cyan\" \"npm run watch\" \"npm run repl\"",
     "repl": "nodemon",
     "watch": "tsc -w",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run test",
-    "build": "tsc && npm publish --access public"
+    "prepublish": "npm run build",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "express",
