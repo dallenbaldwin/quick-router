@@ -1,0 +1,25 @@
+{
+  "formatter": {
+    "enabled": true,
+    "indentSize": 2,
+    "indentStyle": "space",
+    "lineWidth": 90
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": [
+      "dist/**/"
+    ],
+    "rules": {
+      "recommended": true,
+      "style": {
+        "useBlockStatements": "off"
+      }
+    }
+  }
+}
