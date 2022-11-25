@@ -4,7 +4,7 @@
  * (See accompanying file ./LICENSE or copy at https://www.boost.org/LICENSE_1_0.txt)
  */
 
-import { ClientError, ServerError, ErrorCode } from "../constants/errors";
+import { ClientError, ServerError, ErrorCode } from '../constants/errors';
 
 interface QuickRouterErrorExtensions {
   /**
@@ -32,7 +32,7 @@ export interface QuickRouterErrorOptions extends QuickRouterErrorExtensions {
 
 type StaticQuickRouterError = (
   message: string,
-  extras?: QuickRouterErrorExtensions["extras"]
+  extras?: QuickRouterErrorExtensions['extras']
 ) => QuickRouterError;
 
 export interface QuickRouterError extends Error, QuickRouterErrorExtensions {
@@ -69,7 +69,7 @@ export class QuickRouterError extends Error {
    */
   constructor(options: QuickRouterErrorOptions);
   constructor(error: string | QuickRouterErrorOptions) {
-    if (typeof error === "string") {
+    if (typeof error === 'string') {
       super(error);
       this.code = ServerError.INTERNAL_SERVER_ERROR;
     } else {
@@ -78,13 +78,13 @@ export class QuickRouterError extends Error {
       this.code = code ?? ServerError.INTERNAL_SERVER_ERROR;
       this.extras = extras;
     }
-    this.name = "QuickRouterError";
+    this.name = 'QuickRouterError';
     this.traces =
       this.stack
         ?.split(/\n +at/)
         .map((s) => s.trim())
-        .map((s) => s.replace(process.cwd(), ""))
-        .filter((e) => !e.toLowerCase().includes("quickroutererror")) ?? [];
+        .map((s) => s.replace(process.cwd(), ''))
+        .filter((e) => !e.toLowerCase().includes('quickroutererror')) ?? [];
   }
 
   /**
@@ -101,12 +101,12 @@ export class QuickRouterError extends Error {
     if (err instanceof QuickRouterError) return err;
     else if (err instanceof Error)
       return new QuickRouterError({ message: err.message, ...rest });
-    else if (typeof err === "string")
+    else if (typeof err === 'string')
       return new QuickRouterError({ message: err, ...rest });
     else if (err === null)
-      return new QuickRouterError({ message: "null error", ...rest });
+      return new QuickRouterError({ message: 'null error', ...rest });
     else if (err === undefined)
-      return new QuickRouterError({ message: "undefined error", ...rest });
+      return new QuickRouterError({ message: 'undefined error', ...rest });
     else return new QuickRouterError({ message: JSON.stringify(err), ...rest });
   };
 

@@ -4,11 +4,11 @@
  * (See accompanying file ./LICENSE or copy at https://www.boost.org/LICENSE_1_0.txt)
  */
 
-import { RequestHandler, Request } from "express";
-import { defaultExtras } from "../util/defaultExtras";
-import { ErrorCode } from "../constants/errors";
-import { QuickRouterError } from "../QuickRouterError";
-import { Success, SuccessCode } from "../constants/successes";
+import { RequestHandler, Request } from 'express';
+import { defaultExtras } from '../util/defaultExtras';
+import { ErrorCode } from '../constants/errors';
+import { QuickRouterError } from '../QuickRouterError';
+import { Success, SuccessCode } from '../constants/successes';
 
 export interface HideDefaultExtras {
   /**
@@ -120,9 +120,9 @@ export const handler =
             if (custom.hideDefaultExtras === true) extras = custom.extras;
             else {
               const { body, params, query } = custom.hideDefaultExtras;
-              if (body && extras["body"]) delete extras["body"];
-              if (params && extras["params"]) delete extras["params"];
-              if (query && extras["query"]) delete extras["query"];
+              if (body && extras['body']) delete extras['body'];
+              if (params && extras['params']) delete extras['params'];
+              if (query && extras['query']) delete extras['query'];
             }
           }
         } catch (err) {

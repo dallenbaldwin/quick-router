@@ -4,7 +4,7 @@
  * (See accompanying file ./LICENSE or copy at https://www.boost.org/LICENSE_1_0.txt)
  */
 
-import { Request } from "express";
+import { Request } from 'express';
 
 /**
  * wraps up the `params`, `query`, and `body` from the `Request` object

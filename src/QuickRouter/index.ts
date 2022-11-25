@@ -4,14 +4,14 @@
  * (See accompanying file ./LICENSE or copy at https://www.boost.org/LICENSE_1_0.txt)
  */
 
-import { Router } from "express";
-import { handler, HandlerOptions } from "./handler";
+import { Router } from 'express';
+import { handler, HandlerOptions } from './handler';
 
 export interface EndpointOptions extends HandlerOptions {
   /**
    * the REST method to attach to router
    */
-  method: "post" | "get" | "delete" | "put";
+  method: 'post' | 'get' | 'delete' | 'put';
   /**
    * the endpoint for this router segment
    */
