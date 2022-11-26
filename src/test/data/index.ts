@@ -49,7 +49,7 @@ database.parts = entities(
       description: faker.commerce.productDescription(),
       number: `${faker.datatype.number()}-${faker.commerce.productMaterial()}`,
     }),
-  20
+  20,
 );
 
 database.products = entities(
@@ -60,7 +60,7 @@ database.products = entities(
       description: faker.commerce.productDescription(),
       number: `${faker.datatype.number()}-${faker.commerce.productName()}`,
     }),
-  20
+  20,
 );
 
 database.orders = entities(
@@ -70,7 +70,7 @@ database.orders = entities(
       dateToFulfill: faker.datatype.datetime(),
       number: `${faker.random.alphaNumeric()}-${faker.datatype.number()}`,
     }),
-  10
+  10,
 );
 
 database.orderItems = entities(
@@ -81,14 +81,14 @@ database.orderItems = entities(
       product: faker.helpers.arrayElement(database.products),
       qtyToFulfill: faker.datatype.number(),
     }),
-  50
+  50,
 );
 
 // inverse relations
 database.orders = database.orders.map((order) => {
   const { id } = order;
   order.orderItems = database.orderItems.filter(
-    ({ order: { id: orderId } }) => id === orderId
+    ({ order: { id: orderId } }) => id === orderId,
   );
   return order;
 });
@@ -96,7 +96,7 @@ database.orders = database.orders.map((order) => {
 database.customers = database.customers.map((customer) => {
   const { id } = customer;
   customer.orders = database.orders.filter(
-    ({ customer: { id: customerId } }) => id === customerId
+    ({ customer: { id: customerId } }) => id === customerId,
   );
   return customer;
 });
@@ -104,7 +104,7 @@ database.customers = database.customers.map((customer) => {
 database.parts = database.parts.map((part) => {
   const { id } = part;
   part.products = database.products.filter(
-    ({ part: { id: partId } }) => id === partId
+    ({ part: { id: partId } }) => id === partId,
   );
   return part;
 });
@@ -112,7 +112,7 @@ database.parts = database.parts.map((part) => {
 database.products = database.products.map((product) => {
   const { id } = product;
   product.orderItems = database.orderItems.filter(
-    ({ product: { id: productId } }) => id === productId
+    ({ product: { id: productId } }) => id === productId,
   );
   return product;
 });

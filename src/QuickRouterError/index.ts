@@ -32,7 +32,7 @@ export interface QuickRouterErrorOptions extends QuickRouterErrorExtensions {
 
 type StaticQuickRouterError = (
   message: string,
-  extras?: QuickRouterErrorExtensions['extras']
+  extras?: QuickRouterErrorExtensions['extras'],
 ) => QuickRouterError;
 
 export interface QuickRouterError extends Error, QuickRouterErrorExtensions {
@@ -95,7 +95,7 @@ export class QuickRouterError extends Error {
    */
   static fromUnknown = (
     err: unknown,
-    options?: QuickRouterErrorExtensions
+    options?: QuickRouterErrorExtensions,
   ): QuickRouterError => {
     const rest = options ?? {};
     if (err instanceof QuickRouterError) return err;

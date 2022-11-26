@@ -28,7 +28,7 @@ export class Order extends Base {
   get totalPrice(): number {
     return this.orderItems.reduce(
       (prev, { totalPrice }) => prev + totalPrice,
-      0
+      0,
     );
   }
 }
