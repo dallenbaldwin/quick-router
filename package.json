@@ -11,8 +11,8 @@
     "build": "tsc",
     "prepublish": "npm run build",
     "publish": "npm publish --access public",
-    "format": "npx rome format",
-    "lint": "npx rome lint"
+    "format": "npx rome format ./src --write",
+    "lint": "npx rome check ./src"
   },
   "keywords": [
     "express",

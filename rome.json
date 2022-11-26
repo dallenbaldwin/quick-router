@@ -3,7 +3,10 @@
     "enabled": true,
     "indentSize": 2,
     "indentStyle": "space",
-    "lineWidth": 90
+    "lineWidth": 80,
+    "ignore": [
+      "./dist"
+    ]
   },
   "javascript": {
     "formatter": {
@@ -13,7 +16,7 @@
   "linter": {
     "enabled": true,
     "ignore": [
-      "dist/**/"
+      "./dist"
     ],
     "rules": {
       "recommended": true,
