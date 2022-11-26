@@ -64,7 +64,7 @@ export interface HandlerOptions {
    *
    * automatically wrapped in a `try/catch`
    */
-  handler: (req: Request) => Promise<unknown>;
+  handler: (req: Request) => unknown | Promise<unknown>;
   /**
    * a custom code to send on success
    *

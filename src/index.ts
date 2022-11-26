@@ -27,6 +27,3 @@ export {
   QuickRouterError,
   QuickRouterErrorOptions,
 };
-
-import { testingApp } from './test';
-testingApp();
