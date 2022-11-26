@@ -6,8 +6,9 @@ const testingApp = () => {
   express();
   app.use(json());
   app.use('/api', router);
-  app.listen(3000, () => {
-    console.log('Test app listening at http://localhost:3000/api');
+  const port = 3000;
+  app.listen(port, () => {
+    console.log(`Test app listening at http://localhost:${port}/api`);
   });
 };
 
