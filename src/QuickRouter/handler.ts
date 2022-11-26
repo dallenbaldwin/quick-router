@@ -120,9 +120,9 @@ export const handler =
             if (custom.hideDefaultExtras === true) extras = custom.extras;
             else {
               const { body, params, query } = custom.hideDefaultExtras;
-              if (body && extras['body']) delete extras['body'];
-              if (params && extras['params']) delete extras['params'];
-              if (query && extras['query']) delete extras['query'];
+              if (body && extras['body']) extras['body'] = undefined;
+              if (params && extras['params']) extras['params'] = undefined;
+              if (query && extras['query']) extras['query'] = undefined;
             }
           }
         } catch (err) {
